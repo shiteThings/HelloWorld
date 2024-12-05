@@ -1,5 +1,6 @@
 # include <iostream>
 using namespace std;
+//shitethings给sort函数添加注释
 void sort(int arr[], int size) {
     int tmp = 0;
     for (int i =0; i < size-1; ++i) {
@@ -17,6 +18,5 @@ int main() {
     int arr[] = {12,4,89,43,21,78};
     int size = sizeof(arr)/sizeof(arr[0]);
     sort(arr,size);
-    abvdfsf
     return 0;
 }
