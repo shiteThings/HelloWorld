@@ -4,6 +4,7 @@ using namespace std;
 //shitethis有添加注释
 void sort(int arr[], int size) {
     int tmp = 0;
+    bool flag = false;
     for (int i =0; i < size-1; ++i) {
         for(int j = 0; j < size-1-i; ++j) {
             // marco修改排序算法，为从大到小
@@ -11,8 +12,11 @@ void sort(int arr[], int size) {
                 tmp = arr[j];
                 arr[j] =arr[j+1];
                 arr[j+1] = tmp;
+                flag = true;
             }
         }
+        if(!flag)
+            break;
     }   
 }
 int main() {
