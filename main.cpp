@@ -9,11 +9,11 @@ void sort(int arr[], int size) {
                 arr[j] =arr[j+1];
                 arr[j+1] = tmp;
             }
-    }
-        
+        }
+    }   
 }
 int main() {
-    
+    //marco添加的注释
     int arr[] = {12,4,89,43,21,78};
     int size = sizeof(arr)/sizeof(arr[0]);
     sort(arr,size);
