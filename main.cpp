@@ -1,29 +1,42 @@
 # include <iostream>
 using namespace std;
-//shitethings给sort函数添加注释
-//shitethis有添加注释
-void sort(int arr[], int size) {
-    int tmp = 0;
-    bool flag = false;
-    for (int i =0; i < size-1; ++i) {
-        for(int j = 0; j < size-1-i; ++j) {
-            // marco修改排序算法，为从大到小
-            if(arr[j] < arr[j+1]) {
-                tmp = arr[j];
-                arr[j] =arr[j+1];
-                arr[j+1] = tmp;
-                flag = true;
-            }
+
+void sort(int arr[],int i,int j) {
+    int val = arr[i];
+    int l = i;
+    int r = j;
+    while(l < r) {
+        while(l < r && arr[r] >= val) {
+            r--;
         }
-        if(!flag)
-            break;
-    }   
+        if(l < r) {
+            arr[l++] = arr[r];
+        } 
+        while(l < r && arr[l] <= val) {
+            l++;
+        }
+        if(l < r) {
+            arr[r--] = arr[l]
+        }
+
+    }
+    arr[l] = val;
+    sort(arr,i,l-1);
+    sort(arr,l+1,j);
+}
+//shitethings给sort函数添加注释
+void sort(int arr[], int size) {
+    sort(arr,0,size);
 }
 int main() {
     //marco添加的注释
-    //marco又添加了注释
     int arr[] = {12,4,89,43,21,78};
     int size = sizeof(arr)/sizeof(arr[0]);
     sort(arr,size);
+    for(int i = 0; i < size; ++i) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
     return 0;
 }
